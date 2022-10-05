@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>patient</h1>
+</body>
+
+
+<script>
+function issue() {
+    let a = document.getElementById("exampleInputEmail2").value;
+    let b = document.getElementById("shows").value;
+    console.log(a)
+    console.log(b);
+    let obj = {
+      key: a,
+      status: b
+    }
+
+    const url = `http://localhost:9966/doctor/publishStatus/${a}/${b}`
+
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: obj,
+      dataType: 'json',
+      async: true,
+      contentType: 'application/json; charset=utf-8'
+    }).then(res => {
+      console.log("respp:", res);
+      //alert("successfully updated patients prescription as issued")
+
+      swal.fire({
+        title: "Success!",
+        text: "You've successfully updated patients prescription details on multichain",
+        icon: "success",
+        button: "Aww yiss!",
+      });
+    })
+  }
+</script>
+</html>

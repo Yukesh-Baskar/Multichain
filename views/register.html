@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='../styles/loginstyle.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>login</title>
+</head>
+
+<body >
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+        }
+
+        .formAlign {
+            background-color: rgb(230, 230, 208);
+            margin-left: 50px;
+            margin-top: 130px;
+            text-align: center;
+            border-radius: 10px;
+            align-items: center;
+            margin-left: 30%;
+            margin-right: 30%;
+            border: 1px solid;
+            box-shadow: 5px 10px 18px rgb(0, 255, 55);
+            padding-bottom: 50px;
+            border: none;
+        }
+
+        #name {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #role {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #password {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #confirmPassword {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #exampleInputPassword1 {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #but {
+            margin-top: 20px;
+        }
+
+        #exampleInputconfirmPassword1 {
+            width: 500px;
+            margin-left: 150px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        .log {
+            font-size: 230%;
+            color: rgb(42, 128, 61);
+            text-shadow: 1px 5px 5px rgb(0, 255, 55);
+        }
+    </style>
+
+
+    <div>
+        <form class="formAlign" >
+            <fieldset>
+                <legend class="log"><b>Register</b></legend>
+                <div class="form-group" style="margin-left: 30px;">
+                    <label for="exampleInputEmail1" class="form-label mt-4">userName</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="button-addon2"
+                        placeholder="userName" name="userName">
+                    <small id="button-addon2" class="form-text text-muted">We'll never share your userName and Password
+                        with anyone
+                        else.</small>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Role</label>
+                    <input type="text" class="form-control" id="role" placeholder="userRole" name="userRole">
+                    <small id="button-addon2" class="form-text text-muted">Eg : Doctor,Nurse,Patient</small>
+                </div> -->
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false" style="color: black;">Select Role</a>
+
+                        <select class="selectpicker" data-style="btn-info" name="selectpicker" id="role"
+                            style="margin: auto; margin-left: -0px;">
+                            <option value="" disabled selected>Select Role</option>
+                            <option name="doctor" value="doctor">Doctor</option>
+                            <option name="nurse" value="nurse">Nurse</option>
+                        </select>
+
+                    </li>
+                </ul>
+
+                <div class="form-group" style="position: relative; margin-left: 30px;">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="Password">
+
+                    <label for="exampleInputconfirmPassword1" class="form-label mt-4">confirmPassword</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="new-password"
+                        name="Password">
+                </div>
+
+                <button type="button" class="btn btn-success" onclick="register()">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+
+
+        function register() {
+            let a = document.getElementById("name").value;
+            let b = document.getElementById("role").value;
+            let c = document.getElementById("password").value;
+            let d = document.getElementById("confirmPassword").value;
+
+            console.log("____", b)
+            let obj = {
+                userName: a,
+                userRole: b,
+                Password: c,
+                confirmPassword: d
+            }
+
+            const url = `http://localhost:9966/AdminRegisteration/register`
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: JSON.stringify(obj),
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json; charset=utf-8'
+            }).then(res => {
+                console.log("respp:", res);
+                //alert("successfully updated patients prescription as issued")
+
+                if (res == "Registered successfully") {
+                    swal.fire({
+                        title: "Success!",
+                        text: "You've successfully registered",
+                        icon: "success",
+                        button: "Aww yes"
+                    }).then(() => {
+                        console.log("suc");
+                        window.location = "http://localhost:9966/home"
+                    });
+                } else {
+                    swal.fire({
+                        title: "Error!",
+                        text: res,
+                        icon: "error",
+                        button: "error"
+                    })
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='../styles/loginstyle.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>login</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+        }
+
+        .formAlign {
+            animation: mymove 5s;
+            background-color: beige;
+            margin-left: 50px;
+            margin-top: 200px;
+            text-align: center;
+            border-radius: 10px;
+            align-items: center;
+            margin-left: 30%;
+            margin-right: 30%;
+            border: 1px solid;
+            box-shadow: 5px 10px 18px rgb(0, 255, 55);
+            padding-bottom: 50px;
+            border: none;
+        }
+
+        #exampleInputEmail1 {
+            width: 500px;
+            margin-left: 180px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+
+        }
+
+        #exampleInputPassword1 {
+            width: 500px;
+            margin-left: 179px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(0, 255, 55);
+            margin-bottom: 10px;
+        }
+
+        #but {
+            margin-top: 20px;
+        }
+
+        .log {
+            font-size: 230%;
+            color: rgb(42, 128, 61);
+            text-shadow: 1px 5px 5px rgb(0, 255, 55);
+        }
+    </style>
+
+
+    <div>
+        <form class="formAlign"  action="/login/login" method="POST" name="myForm">
+            <fieldset>
+                <legend class="log"><b>Login</b></legend>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4" id="user">userName</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="userName" name="userName">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                        name="Password">
+                </div>
+
+                <button type="submit" class="btn btn-success" id="but" onclick="validateForm()">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <script>
+
+        function validateForm() {
+            var a = document.getElementById("exampleInputEmail1").value;
+            localStorage.setItem("doctorName",a);
+        }
+
+    </script>
+</body>
+
+</html>

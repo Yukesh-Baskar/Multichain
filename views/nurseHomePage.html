@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <style>
+        #form {
+            width: 50%;
+            text-align: center;
+            margin-top: -480px;
+            padding-left: 100px;
+            padding-right: 50px;
+            margin-left: 100px;
+            height: 50%;
+        }
+
+        .form-control {
+            width: 500px;
+            margin-left: 100px;
+            align-items: center;
+            box-shadow: 1px 5px 5px rgb(44, 50, 139);
+            margin-bottom: 0px;
+            margin-right: 150px;
+        }
+
+        #in {
+            margin-right: 150px;
+        }
+
+        #exampleInputEmail1 {
+            margin-right: 150px
+        }
+
+        #exampleInputEmail2 {
+            margin-left: 1170px;
+            float: right;
+        }
+
+        #emailHelp {
+            margin-right: 150px
+        }
+
+        #pass {
+            margin-right: 150px
+        }
+
+        #btn {
+            margin-top: 20px;
+            margin-left: -140px;
+            background-color: rgb(121, 66, 68);
+        }
+
+        #duv {
+            box-sizing: border-box;
+            margin-bottom: -350px;
+            padding-left: 200px;
+            background-color: rgb(255, 255, 255);
+            height: 250px;
+            border-radius: 20px;
+            color: rgb(141, 42, 47);
+            margin-right: 280px;
+            margin-top: -80px;
+
+        }
+
+        #showw {
+            margin-top: 20px;
+            width: -moz-fit-content;
+            margin-right: 100px;
+            text-align: center
+        }
+
+        #vl {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        table,
+        td {
+            border: 2px solid rgb(81, 81, 170);
+            align-items: center;
+            padding: 10px 10px;
+            /* width: 70%; */
+        }
+        
+
+        #yuv {
+            box-sizing: border-box;
+            margin-bottom: 50px;
+            padding-left: 200px;
+            background-color: rgb(255, 255, 255);
+            height: 250px;
+            border-radius: 20px;
+            color: rgb(141, 42, 47);
+            margin-right: 150px;
+            margin-top: 200px;
+        }
+
+        #vll {
+            margin-left: 10px;
+        }
+
+        #myTable2 {
+            margin-left: 20%;
+            width: 30%;
+            color: blue;
+            
+        }
+        #nuv{
+            display: none;
+        }
+
+
+        #btnn {
+            display: none;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="docName">MedicoSpital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                </li>
+                <a id="vl" href="http://localhost:9966/home/logout"><button class="btn btn-secondary my-2 my-sm-0"
+                        type="submit">Logout</button></a>
+                <a id="vll"><button class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="viewedPatients()"
+                        name="viewedPatients">Patients</button></a>
+                </li>
+
+                <div class="d-flex" style="float: right;">
+                    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="text"
+                        placeholder="Enter patient key" name="key">
+
+                    <button class="btn btn-outline-primary"
+                        style="margin-top: 10px; background-color: rgb(1, 168, 112); color: white; margin-right: 10px;"
+                        id="btn" onclick="myfunction()">
+                        Submit</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div >
+        <h1 id="nuv">Viewed patient's list</h1>
+        <table id="myTable2">
+
+        </table>
+    </div>
+
+    <div>
+        <div id="duv" style="float: right; ">
+            <table id="myTable">
+
+            </table>
+            <table id="myTablePara">
+
+            </table>
+        </div>
+
+        <!-- <p name="key" id="showw" cols="30" rows="10"></p> -->
+        <div id="yuv">
+
+
+        </div>
+
+        <button class="btn btn-outline-primary"
+            style="margin-top: 10px; background-color: rgb(1, 168, 112); color: white; margin-right: 10px;" id="btnn" onclick="backPage()">
+            Back</button>
+    </div>
+
+    <form id="form">
+        <div>
+            <fieldset>
+                <large style="text-align: center; margin-right: 180px; font-size: x-large;"><b>Admission form</b>
+                </large>
+                <!-- <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4" style="margin-right: 200px;">Doctor
+                        Name</label>
+                    <input type="text" class="form-control" id="doctor_name" aria-describedby="text"
+                        placeholder="Enter Doctor name" name="doctor_name">
+                </div> -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4" style="margin-right: 200px;">Patient
+                        Name</label>
+                    <input type="text" class="form-control" id="patient_name" aria-describedby="text"
+                        placeholder="Enter patient name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4" style="margin-right: 200px;">Patient
+                        Age</label>
+                    <input type="text" class="form-control" id="patient_age" aria-describedby="text"
+                        placeholder="Enter patient Age" name="age">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4" style="margin-right: 200px;">Blood
+                        Pressure</label>
+                    <input type="text" class="form-control" id="patient_pressure" aria-describedby="text"
+                        placeholder="Enter patient Blood pressure" name="blood_pressure">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4"
+                        style="margin-right: 200px;">temperature</label>
+                    <input type="text" class="form-control" id="patient_temperature" aria-describedby="text"
+                        placeholder="Enter patient temperature" name="temperature">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4"
+                        style="margin-right: 200px;">Disease</label>
+                    <input type="text" class="form-control" id="patient_disease" placeholder="Disease " name="disease">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4"
+                        style="margin-right: 200px;">Prescription</label>
+                    <textarea type="textarea" class="form-control" id="patient_presription" placeholder="Prescription "
+                        name="prescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4" style="margin-right: 200px;">Mobile
+                        number</label>
+                    <input type="tel" class="form-control" id="patient_number" placeholder="Mobile number "
+                        name="mobile">
+                </div>
+                <button type="button" class="btn btn-primary" id="btn" onclick="formsubmit()">Submit</button>
+                <button type="reset" id="myTablePara" class="btn btn-primary"
+                    style="margin-top: 20px;margin-right: 60px;  background-color: rgb(36, 47, 112);"
+                    onclick="clear()">Clear</button>
+        </div>
+        </fieldset>
+    </form>
+
+    <p id="p"> </p>
+
+    <!-- <div class="form-group " style="margin-left: 200px;">
+        <label for="exampleInputEmail1" class="form-label mt-4" style="margin-right: 200px;">DoctorName</label>
+        <input type="text" class="form-control" id="patient_name" aria-describedby="text"
+            placeholder="Enter patient name" name="name">
+    </div> -->
+
+    <script>
+
+        function backPage() {
+            document.querySelector("nav").style.display = "block";
+            document.querySelector("form").style.display = "block";
+            document.getElementById("nuv").style.display = "none";
+
+
+            document.getElementById("myTable2").style.display = "none";
+            document.getElementById("btnn").style.display = "none";
+        }
+
+        function viewedPatients() {
+            var a = localStorage.getItem("doctorName");
+            document.querySelector("nav").style.display = "none";
+            document.querySelector("form").style.display = "none";
+
+            document.getElementById("myTable2").style.display = "block";
+            document.getElementById("nuv").style = "display : block;margin-left : 25%; padding : 10px 10px; color: blue; text-shadow : 1px 3px 5px rgb(44, 50, 139)";
+            document.getElementById("btnn").style = "display : block;margin-top : -20%; margin-left : 33%";
+            
+            // document.getElementById("btnn").style.margin-top = "20px";
+
+            let obj = {
+                viewedPatients: a
+            }
+            const url = `http://localhost:9966/doctor/liststreamkeyitemswithdocname/${a}`
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                data: JSON.stringify(obj),
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json; charset=utf-8'
+            }).then(res => {
+                console.log("respdl:", res);
+                if (res == null) {
+                    swal.fire({
+                        title: "Empty!",
+                        text: "No patients in this key!!!",
+                        icon: "error",
+                    });
+                } else {
+                    for (let i = 0; i < res.length; i++) {
+                        // addRowToTable("Status", res[i].data.json.status)
+                        addRowToTable2("Prescription", res[i].data.json.prescription)
+                        addRowToTable2("Mobile", res[i].data.json.mobile)
+                        addRowToTable2("Temperature", res[i].data.json.temperature)
+                        addRowToTable2("Disease", res[i].data.json.disease)
+                        addRowToTable2("Blood_pressure", res[i].data.json.blood_pressure)
+                        addRowToTable2("Age", res[i].data.json.age);
+                        addRowToTable2("Name", res[i].data.json.name);
+                        // addRowToTable("ID", res[i].data.json.id)
+                        addRowToTable2("Doctor Name", res[i].data.json.doctor_name);
+                        $('</br>')
+                        addRow();
+
+                    }
+                    // document.getElementById("p").innerHTML = JSON.stringify(res);
+                }
+                console.log(res);
+
+                // if (res.infostatus != undefined) {
+                //     if (res.infostatus.json.status == "issued") {
+                //         swal.fire({
+                //             title: "Success!",
+                //             text: "Issued",
+                //             icon: "success",
+                //         });
+
+                //     }
+                // }
+
+            })
+        }
+
+        var b = document.getElementById("docName");
+        b.innerHTML = "welcome" + " " + localStorage.getItem("doctorName");
+
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#myTablePara").empty();
+            });
+        });
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#myTable").empty();
+            });
+        });
+
+        function myfunction() {
+            let a = document.getElementById("exampleInputEmail2").value;
+            if (a == '') return swal.fire({
+                title: "Empty field!",
+                text: "Please provide key to fetch!!!",
+                icon: "error",
+            });
+            console.log(a)
+            let obj = {
+                key: a
+            }
+            const url = `http://localhost:9966/doctor/liststreamkeyitemss/${a}`
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                data: obj,
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json; charset=utf-8'
+            }).then(res => {
+                console.log("respdl:", res);
+                if (res == null) {
+                    swal.fire({
+                        title: "Empty!",
+                        text: "No patients in this key!!!",
+                        icon: "error",
+                    });
+                }
+
+                if (res.infostatus != undefined) {
+                    console.log("hlodoc");
+                    if (res.infodetails.json.doctor_name == undefined) {
+                        // if (res.json.doctor_name != localStorage.getItem("doctorName")) {
+                        return swal.fire({
+                            title: "Nope!",
+                            text: "You can't view other doctor patients details!",
+                            icon: "error",
+                        });
+                        // }
+                    }
+
+                    if (res.infostatus.json.status == "issued") {
+                        swal.fire({
+                            title: "Success!",
+                            text: "Issued",
+                            icon: "success",
+                        });
+
+                        addRowToTable("Status", res.infostatus.json.status)
+                        addRowToTable("Prescription", res.infodetails.json.prescription)
+                        addRowToTable("Mobile", res.infodetails.json.mobile)
+                        addRowToTable("Temperature", res.infodetails.json.temperature)
+                        addRowToTable("Disease", res.infodetails.json.disease)
+                        addRowToTable("Blood pressure", res.infodetails.json.blood_pressure)
+                        addRowToTable("Age", res.infodetails.json.age);
+                        addRowToTable("Name", res.infodetails.json.name);
+                        addRowToTable("ID", res.infodetails.json.id)
+                        addRowToTable("Doctor Name", res.infodetails.json.doctor_name);
+                    }
+                }
+                else {
+                    // $("#myTable").empty();
+                    // if (res.infostatus.json.status == undefined) {
+                    if (res.json.doctor_name == undefined) {
+                        // if (res.json.doctor_name != localStorage.getItem("doctorName")) {
+                        return swal.fire({
+                            title: "Nope!",
+                            text: "You can't view other doctor patients details!",
+                            icon: "error",
+                        });
+                        // }
+                    }
+                    console.log("hiiiii");
+                    addRowToTable("Status", "Not yet issued")
+
+                    addRowToTable("Date & Time", res.json.time)
+                    addRowToTable("Prescription", res.json.prescription)
+                    addRowToTable("Mobile", res.json.mobile)
+                    addRowToTable("Temperature", res.json.temperature)
+                    addRowToTable("Disease", res.json.disease)
+                    addRowToTable("Blood pressure", res.json.blood_pressure)
+                    addRowToTable("Age", res.json.age);
+                    addRowToTable("Name", res.json.name);
+                    addRowToTable("ID", res.json.id)
+                    addRowToTable("Doctor Name", res.json.doctor_name);
+
+                }
+            })
+        }
+
+        function addRowToTable(left, right) {
+            console.log("Table data", left, right);
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = left;
+            cell1.style.color = "green"
+            cell2.innerHTML = right;
+        }
+
+        function addRowToTable2(left, right) {
+            console.log("Table data", left, right);
+            var table = document.getElementById("myTable2");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            // cell2.style.margin-right = "70%"
+            cell1.innerHTML = left;
+            cell1.style.color = "green"
+            cell2.innerHTML = right;
+        }
+
+        function addRow() {
+            var table = document.getElementById("myTable2");
+            table.style.color = "blue"
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0).style = "background-color : lightblue";
+            var cell2 = row.insertCell(1).style = "background-color : lightblue";
+            // var cell2 = row.insertCell(1);
+        }
+
+
+
+        function formsubmit() {
+
+            let a = document.getElementById("patient_name").value;
+            let b = document.getElementById("patient_age").value;
+            let c = document.getElementById("patient_pressure").value;
+            let d = document.getElementById("patient_temperature").value;
+            let e = document.getElementById("patient_disease").value;
+            let f = document.getElementById("patient_presription").value;
+            let g = document.getElementById("patient_number").value;
+            let h = localStorage.getItem("doctorName");
+            console.log("doc", h);
+
+            console.log("_", h);
+            console.log(a)
+            let obj = {
+                name: a,
+                age: b,
+                blood_pressure: c,
+                temperature: d,
+                disease: e,
+                prescription: f,
+                mobile: g,
+                doctor_name: h
+
+            }
+            const url = `http://localhost:9966/nurse/publish/${h}`
+
+            const urll = `http://localhost:9966/nurse/publishToDoctor/${h}`
+
+            $.ajax({
+                url: urll,
+                type: "POST",
+                data: JSON.stringify(obj),
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json; charset=utf-8'
+            }).then(res => {
+                console.log("resp doc", res);
+            })
+
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: JSON.stringify(obj),
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json; charset=utf-8'
+            }).then(res => {
+                console.log("resp patient", res);
+                if (res == null) {
+                    swal.fire({
+                        title: "Empty!",
+                        text: "No patients in this key!!!",
+                        icon: "error",
+                    });
+                }
+                else if (res == "Only doctor can update patient details") {
+                    swal.fire({
+                        title: "Nope",
+                        text: `Only doctor can update patient details`,
+                        icon: "error",
+                    });
+                } else {
+                    swal.fire({
+                        title: "Success",
+                        text: `Inserted with the id of :${res["id"]}`,
+                        icon: "success",
+                    });
+                    console.log(res, "PPP");
+                    addRowToTablePara("Date & Time", res["time"]);
+                    addRowToTablePara("Prescription", res["body"]["prescription"])
+                    addRowToTablePara("Mobile", res["body"]["mobile"])
+                    addRowToTablePara("Temperature", res["body"]["temperature"])
+                    addRowToTablePara("Disease", res["body"]["disease"])
+                    addRowToTablePara("Blood pressure", res["body"]["blood_pressure"])
+                    addRowToTablePara("Age", res["body"]["age"]);
+                    addRowToTablePara("Name", res["body"]["name"]);
+                    addRowToTablePara("Id", res["id"])
+                    addRowToTablePara("DoctorName", res["body"]["doctor_name"]);
+                }
+            })
+        }
+        function addRowToTablePara(left, right) {
+            console.log("Table data", left, right);
+            var table = document.getElementById("myTablePara");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = left;
+            cell2.innerHTML = right;
+        }
+    </script>
+</body>
+
+</html>
